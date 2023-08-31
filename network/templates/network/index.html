@@ -76,7 +76,7 @@
 <div class="all-posts">
     {% for post in posts_of_the_page %}
     <div class=" border mx-5 my-4">
-        <h5 class="username"><a href="{% url 'profile' user_id=post.user.id %}"> @{{ post.user }} </a> </h5>
+        <h5 class="username"><a href="{% url 'profile' user_id=post.user.id %}">@{{ post.user }} </a></h5>
         <h6 class="content mx-4" id="content_{{ post.id }}" >{{ post.content }} </h6>
         <p class="date mx-4">{{ post.date }} </p>
         {% if user.is_authenticated %}
@@ -122,6 +122,4 @@
       {% endif %}
     </ul>
   </nav>
-
-        
 {% endblock %}
