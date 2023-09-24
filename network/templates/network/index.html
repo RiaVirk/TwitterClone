@@ -58,15 +58,17 @@
     </script>
 
 
-    <h1>All Posts </h1>
+    <h1 class="my-3 mx-5 fw-bolder">All Posts </h1>
 
     {% if user.is_authenticated %}
     
     <div class="my-3 mx-5">
     <h2> New Post </h2>
-    <form action="{% url "newPost" %}" method="post">
+    <form action="{% url "newPost" %}" method="post" class="form-floating">
         {% csrf_token %}
-        <textarea name="content" row="4" cols="70"></textarea>
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px"></textarea>
+        <label for="floatingTextarea">Post: </label>
+        {% comment %} name="content" row="5" cols="100" {% endcomment %}
         <br>
         <input type="submit" value="Post" class="btn btn-primary">
     </form>
